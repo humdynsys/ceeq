@@ -33,7 +33,9 @@ cd ceeq-platform
 * [React](https://reactjs.org/) - The frontend framework used
 * [Gradle]([https://gradle.org/](https://gradle.org/)) - Dependency Management
 * [MongoDB](https://www.mongodb.com/) - Database
+* [PostgresQL](https://www.postgresql.org/) - The World's Most Advanced Open Source Relational Database 
 * [Docker](https://www.docker.com/) - Develop faster. Run anywhere.
+* [Bash](https://www.gnu.org/software/bash/) - A shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh).
 * [Bash](https://www.gnu.org/software/bash/) - A shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh).
 
 ## License
