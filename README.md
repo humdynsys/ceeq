@@ -1,5 +1,5 @@
 
-# WellForMe PLATFORM™
+#CEN PLATFORM™
 
 This project is a CRUD API for managing journal entries.
 
@@ -20,8 +20,8 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
 ```bash
-git clone https://github.com/humdynsys/wellforme-platform
-cd wellforme-platform
+git clone https://github.com/humdynsys/cen-platform
+cd cen-platform
 ./gradlew wrapper
 ./gradlew clean build
 ./gradlew bootRun
