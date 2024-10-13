@@ -1,7 +1,14 @@
 
 #HUMDYNCEN PLATFORM™
 
-This project is a CRUD API for managing journal entries.
+This project is a platform for dynamic research and implementation of various types of ideas and components:
+- Lightweight User Interfaces
+- Application Programming Interface (API)
+- In-memory Data Processing
+- Online/Offline Communications and Synchronization
+- Data and Messaging Queues
+- Redundancy, Monitoring, and Error Flow Handlers
+- Neuro-Symbolic Systems and Components
 
 ## Getting Started
 
