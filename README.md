@@ -21,7 +21,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```bash
 git clone https://github.com/humdynsys/wellforme-platform
-cd ceeq-platform
+cd wellforme-platform
+./gradlew wrapper
 ./gradlew clean build
 ./gradlew bootRun
 ```
