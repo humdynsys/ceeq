@@ -1,5 +1,5 @@
 
-# CEEQ PLATFORM™
+# WellForMe PLATFORM™
 
 This project is a CRUD API for managing journal entries.
 
@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
 ```bash
-git clone https://github.com/humdynsys/ceeq-platform
+git clone https://github.com/humdynsys/wellforme-platform
 cd ceeq-platform
 ./gradlew clean build
 ./gradlew bootRun
