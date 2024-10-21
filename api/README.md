@@ -1,4 +1,4 @@
-# API - providing crrud functions for any type of configured representation nodes for the API
+# API - providing 'CRRUD' functions for any type of configured representation nodes for the API
 
 
 # Movements
@@ -15,7 +15,11 @@
 
 
 
+## SQL
 
+```sql
+
+-- First iteration
 CREATE TYPE subscription_level_enum AS ENUM ('FREE', 'STARTER', 'RESEARCH', 'ENTERPRISE');
 
 CREATE TABLE Actor (
@@ -34,3 +38,28 @@ payload JSONB NOT NULL,
 ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 actor_uuid UUID
 );
+
+-- Second iteration (let's do ONE table)
+-- node_name, for example, create|update|read-one|read-all|delete[niche' category or representation]
+-- node_payload is the JSON { "id":"120", "mind":"Focused on increase and abundance.", "ts":"2024-10-21T00:04:05.540676403Z" }
+-- node_ts, 2024-10-21T00:04:05.540676403Z
+-- node_uid, ff8509aa-6686-41f4-b9c7-79e601205c57
+CREATE TABLE NewActor (
+    uid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email_primary VARCHAR(255) NOT NULL,
+    email_secondary VARCHAR(255),
+    phone VARCHAR(20) NOT NULL,
+    subscription_level subscription_level_enum DEFAULT 'FREE',
+    node_name VARCHAR(255),
+    node_payload JSONB,
+    node_ts TIMESTAMP,
+    node_uid UUID
+);
+```
+
+## International Phone Number Format E.164
+
+- [E.164, Wikipedia](https://en.wikipedia.org/wiki/E.164)
+- [Google's Open Source - LibPhoneNumber Library](https://github.com/google/libphonenumber)

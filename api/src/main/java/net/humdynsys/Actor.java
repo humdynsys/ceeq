@@ -8,10 +8,12 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Builder
+@EqualsAndHashCode
 @ToString
 public class Actor {
     @Id
     private UUID uuid;
-    private String name;
-
+    private Name name;
+    private Contact contact;
+    private SubscriptionLevel subscriptionLevel;
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Supplier;
@@ -24,10 +25,15 @@ public class ActorTests {
     @Test
     public void create_newActor() {
         UUID testUUID = UUID.randomUUID();
-        String expectedUsername = "davidking";
+        String firstname = "David";
+        String lastname = "NonKlingon";
+        String email = "david.nonklingon@saasyfuss.co";
+        String phone = "561-111-1000";
         Supplier<Actor> actor = () -> Actor.builder()
                 .uuid(testUUID)
-                .name("davidking")
+                .name(Name.builder().firstName(firstname).lastName(lastname).build())
+                .contact(Contact.builder().email(email).phone(phone).build())
+                .subscriptionLevel(SubscriptionLevel.FREE)
                 .build();
         Optional<Actor> actorExists = Optional.ofNullable(actor.get());
 
@@ -38,7 +44,13 @@ public class ActorTests {
         assertThat(actualActor.getUuid())
                 .isNotNull()
                 .isEqualByComparingTo(testUUID);
-        assertThat(actualActor.getName()).isNotNull().isEqualToIgnoringCase(expectedUsername);
+        assertThat(actualActor.getName()).isNotNull();
+        assertThat(actualActor.getName().getFirstName()).isNotNull().isEqualToIgnoringCase(firstname);
+        assertThat(actualActor.getName().getLastName()).isNotNull().isEqualToIgnoringCase(lastname);
+        assertThat(actualActor.getContact()).isNotNull();
+        assertThat(actualActor.getContact().getEmail()).isNotNull().isEqualToIgnoringCase(email);
+        assertThat(actualActor.getContact().getPhone()).isNotNull().isEqualToIgnoringCase(phone);
+        assertThat(Arrays.stream(SubscriptionLevel.values()).anyMatch(value -> value == actualActor.getSubscriptionLevel())).isTrue();
     }
 
     @Test
@@ -49,4 +61,5 @@ public class ActorTests {
         assertThat(actor.get().getUuid()).isNull();
         assertThat(actor.get().getName()).isNull();
     }
+
 }
