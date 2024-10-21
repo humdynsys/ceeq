@@ -8,6 +8,6 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class Contact {
-    private String email;
-    private String phone;
+    private Email email;
+    private Phone phone;
 }

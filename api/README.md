@@ -44,7 +44,7 @@ actor_uuid UUID
 -- node_payload is the JSON { "id":"120", "mind":"Focused on increase and abundance.", "ts":"2024-10-21T00:04:05.540676403Z" }
 -- node_ts, 2024-10-21T00:04:05.540676403Z
 -- node_uid, ff8509aa-6686-41f4-b9c7-79e601205c57
-CREATE TABLE NewActor (
+CREATE TABLE Actor (
     uid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
