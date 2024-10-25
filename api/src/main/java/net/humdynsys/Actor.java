@@ -1,6 +1,5 @@
 package net.humdynsys;
 
-import jakarta.persistence.Id;
 import lombok.*;
 
 import java.util.UUID;
@@ -11,7 +10,6 @@ import java.util.UUID;
 @EqualsAndHashCode
 @ToString
 public class Actor {
-    @Id
     private UUID uuid;
     private Name name;
     private Contact contact;
